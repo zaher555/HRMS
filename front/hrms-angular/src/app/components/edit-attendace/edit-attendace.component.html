@@ -1,0 +1,63 @@
+<div class="row ws-5">
+  <div class="col-md-11 main-data pt-3">
+    <div class="mx-5 mt-3 card-title d-flex justify-content-between align-items-center"[ngStyle]="{'display':'inline-block','margin-bottom':'20px'}" >
+      <p [ngStyle]="{'color':'#28688B'}" class="fs-3 m-0">Edit Attendance</p>
+        <a class="nav-a" [routerLink]="['/attendance-departure']" routerLinkActive="''" >
+          <fa-icon [icon]="faLongArrowRight" class=" fs-2 mb-5" [ngStyle]="{'color':'#28688B'}" ></fa-icon></a>
+    </div>
+      <div class="card mt-5 pb-5" [ngStyle]="{'background-color':'transparent','border':'none'}">
+     
+      
+          <form  class="m-auto rounded p-5" [formGroup]="attendnaceForm" (ngSubmit)="updateAttendance()">
+            <div class="mb-3">
+              <label for="name" class="form-label mb-0">employee Name</label>
+              <input readonly type="text" class="form-control"  formControlName="name"  id="name" name="name" [ngStyle]="{'background-color':'#0B5E84','color':'#fff'}">
+              <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
+            </div>
+            <div class="mb-3">
+              <label for="department" class="form-label  mb-0">department Name</label>
+              <input readonly type="text" class="form-control"  formControlName="department"  id="department" name="department" [ngStyle]="{'background-color':'#0B5E84','color':'#fff'}">
+              <span *ngIf="errors.department" class="text-danger">{{errors.department}}</span>
+            </div>
+  
+            <div class="mb-3">
+              <label for="check_in" class="form-label  mb-0">Attedance Time</label>
+              <input type="time" class="form-control" formControlName="check_in"  id="check_in" name="check_in"
+                required>
+              <span *ngIf="errors.check_in" class="text-danger">{{errors.check_in}}</span>
+  
+            </div>
+            <div class="mb-3">
+              <label for="check_out" class="form-label  mb-0">Departure Time</label>
+              <input type="time" class="form-control" formControlName="check_out"  id="check_out" name="check_out" required>
+                <span *ngIf="errors.check_out" class="text-danger">{{errors.check_out}}</span>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="bonus_value" class="form-label  mb-0">Bonus</label>
+              <input type="text" class="form-control" formControlName="bonus_value"  id="bonus_value" name="bonus_value"
+                required>
+              <span *ngIf="errors.check_in" class="text-danger">{{errors.bonus_value}}</span>
+  
+            </div>
+            <div class="mb-3">
+              <label for="check_out" class="form-label  mb-0">Deduction</label>
+              <input type="text" class="form-control" formControlName="deduction_value"  id="deduction_value" name="deduction_value" required>
+                <span *ngIf="errors.deduction_value" class="text-danger">{{errors.check_out}}</span>
+            </div>
+   -->
+            <div class="mb-3">
+              <label for="date" class="form-label  mb-0">Attendance Date</label>
+              <input type="date" class="form-control" formControlName="date"   id="date"
+                name="attendanceDate" required>
+              <span *ngIf="errors.date" class="text-danger">{{errors.date}}</span>
+  
+  
+            </div>
+            <button type="submit" class="btn w-50 m-auto d-block submit" [disabled]="attendnaceForm.invalid">update</button>
+          </form>
+       
+  
+  
+      </div>
+      </div>
+</div>

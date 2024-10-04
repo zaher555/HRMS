@@ -1,0 +1,32 @@
+<div class="col-8 mx-auto">
+  <div class="card" [ngStyle]="{'background-color':'transparent','border':'none'}">
+    <div class="card-title d-flex justify-content-between align-items-center" [ngStyle]="{'display':'inline-block','margin-bottom':'20px'}">
+      <p [ngStyle]="{'color':'#28688B'}" class="fs-3 m-0">View Admin</p>
+      <a class="nav-a" [routerLink]="['/admins']" routerLinkActive="">
+        <fa-icon [icon]="faLongArrowRight" [ngStyle]="{'color':'#28688B'}" class=" fs-2 mb-5" ></fa-icon>
+      </a>
+    </div>
+    <div class="container ms-2 my-5 rounded">
+      <div class="row m-5 my-5">
+        <div class="form-group col-md-6">
+          <mat-label>Full Name</mat-label>
+          <p class="form-control" >{{ adminForm.get('fullname')?.value }}</p>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-label>Group</mat-label>
+          <p class="form-control" >{{ groupName }}</p>
+        </div>
+      </div>
+      <div class="row m-5 my-5">
+        <div class="form-group col-md-6">
+          <mat-label>User Name</mat-label>
+          <p class="form-control" >{{ adminForm.get('username')?.value }}</p>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-label>Email</mat-label>
+          <p class="form-control">{{ adminForm.get('email')?.value }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+body
+{
+  background-color: #EBEBEB;
+}
+.logo
+{
+  width: 10%;
+}
+.title
+{
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+.text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.75s step-end infinite;
+}
+form
+{
+  width: 36%;
+}
+.month,.year,.submit
+{
+  width: 34%;
+}
+.stroke
+{
+  border: 2px solid #296889;
+  font-size: 13px;
+}
+.show
+{
+  background-color: #53808e;
+  color: white;
+  font-size: 15px;
+}
+.search div
+{
+  border: 2px solid #296889;
+  border-radius: 10px;
+}
+.search div span
+{
+  background-color: #296889;
+  color: white;
+  cursor: pointer;
+}
+thead th
+{
+  background-color: #296889;
+  color: white;
+}
+td{
+  font-size: 10px;
+  font-weight: 500;
+}
+i, .delete
+{
+ 
+  cursor: pointer;
+}
+
+.print
+{
+  font-size: 30px;
+}
+.table-report {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+
+table {
+  width: 100%; 
+}
+
+mat-paginator {
+  width: 100%; 
+
+  align-self: stretch; 
+}
+
+.mat-elevation-z8 {
+  overflow: hidden; 
+}
+.text-danger{
+  cursor: pointer;
+}

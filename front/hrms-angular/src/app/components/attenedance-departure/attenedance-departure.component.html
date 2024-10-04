@@ -1,0 +1,112 @@
+<div class="ms-5">
+  <div class="col-md-11 main-data pt-3">
+  <div class="logo">
+    <img src="logo.png" class="img-fluid rounded-start">
+  </div>
+  <div class="col-md-11 main-data pt-3">
+      <div class="title text-center pb-5 " [style.color]="'#225470'">
+    attendance - departure Report
+      </div>
+      <div class="">
+        <div class="d-flex justify-content-between col-md-12 mb-5">
+          <div class="row col-md-8 me-auto">
+            <div class="from-date col-md-3">
+              <mat-label for="from-date" class="form-label mb-0">From</mat-label>
+              <input type="date" class="form-control stroke" id="from-date" name="from-date" #from>
+            </div>
+            <div class="to-date col-md-3">
+              <mat-label for="to-date" class="form-label mb-0">To</mat-label>
+              <input type="date" class="form-control stroke" id="to-date" name="to-date" #to>
+            </div>
+
+            <div class="submit ms-5 my-3 col-md-2">
+              <button type="button" class="btn show" (click)="showResult(searchVal.value,from.value,to.value)">Show</button>
+            </div>
+          </div>
+
+          <div class="icons">
+            <i class="fa-solid fa-print me-2 print" (click)="printPage()" mat-raised-button matTooltip="Print"></i>
+            <i class="fa-solid fa-list-alt me-2 print" mat-raised-button matTooltip="ListAlt" (click)="exportToExcel()"></i>
+            <i class="fa-solid fa-file-pdf  print" mat-raised-button matTooltip="View" (click)="generatePDF()"></i>
+          </div>
+        </div>
+
+          <div class="mt-3 col-md-4 me-auto search d-flex position-relative">
+              <input matInput (keyup)="applyFilter($event)" type="search" class="form-control stroke w-100" #searchVal placeholder="employee name" #input>
+            <i class="fa-solid fa-magnifying-glass position-absolute" style="right: 0;"></i>
+          </div>
+
+        <div class="d-flex justify-content-end col-md-8 mt-3 w-100">
+          <a [routerLink]="['/addattendance']" routerLinkActive="router-link-active" ><button type="button" class="btn show">+ Add attendance</button></a>
+        </div>
+
+    </div>
+      <div class="table-report my-5">
+
+
+          <div class="mat-elevation-z8">
+            <div *ngIf="isLoading; else elsetableBlock">
+              <app-loader></app-loader>
+            </div>
+            <ng-template #elsetableBlock class="w-100">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="pdfTable">
+
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+
+              <!-- Employee Name Column -->
+              <ng-container matColumnDef="employee_name">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.employee.name}} </td>
+              </ng-container>
+
+              <!-- Department Name Column -->
+              <ng-container matColumnDef="department_name">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> Department </th>
+                <td mat-cell *matCellDef="let element"> {{element.employee.department.department_name}} </td>
+              </ng-container>
+
+              <!-- Check In Column -->
+              <ng-container matColumnDef="check_in">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> Check In </th>
+                <td mat-cell *matCellDef="let element"> {{element.check_in}} </td>
+              </ng-container>
+
+
+              <!-- Check Out Column -->
+              <ng-container matColumnDef="check_out">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}">Check Out </th>
+                <td mat-cell *matCellDef="let element"> {{element.check_out}} </td>
+              </ng-container>
+
+
+
+              <!-- Date Column -->
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background-color':'#53808e','padding-left':'40px','color':'#FFF'}"> Actions </th>
+                <td mat-cell *matCellDef="let element" class=" ">
+                  <a class="me-3" [routerLink]="['/show-attendance',element.id]" ><fa-icon [icon]="show" class=" text-primary"></fa-icon></a>
+                  <a class="me-3" [routerLink]="['/editattendance',element.id]" ><fa-icon [icon]="edit" class=" text-warning"></fa-icon></a>
+                  <fa-icon [icon]="deleteicon" class="text-danger" (click)="delete(element.id)"></fa-icon></td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table> </ng-template >
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+      </div>
+
+  </div>
+</div>
+  </div>

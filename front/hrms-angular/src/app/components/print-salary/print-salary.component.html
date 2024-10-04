@@ -1,0 +1,20 @@
+<a class="nav-a me-auto " [routerLink]="['/salaryreport']" routerLinkActive="">
+    <fa-icon [icon]="faLongArrowRight" class=" fs-2 mb-5" ></fa-icon>
+    
+</a>
+<div class="print-container mt-5 text-center">
+    <h3 class="fs-2 mb-5">Employee Report</h3>
+    <div class="card pt-5 pb-5 w-75 mx-auto">
+        <div class="form-group mb-3 col-md-3"><p><strong>Employee Name:</strong>{{ row.employee_name }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Department:</strong> {{ row.department_name }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Basic Salary:</strong> {{ row.basic_salary }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Total Attendance Days:</strong> {{ row.total_attendance_days }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Total Departure Days:</strong> {{ row.total_departure_days }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Additional Hours:</strong> {{ row.additional_hours }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Discount Hours:</strong> {{ row.discount_hours }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Total Addition:</strong> {{ row.total_addition }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Total Discount:</strong> {{ row.total_discount }}</p></div>
+    <div class="form-group mb-3 col-md-3"><p><strong>Net Salary:</strong> {{ row.net_salary }}</p></div></div>
+  <div class="d-flex "><button (click)="printPage()" class=" print ms-auto mb-5 fs-5 mt-5" [ngStyle]="{'cursor':'pointer','color':'black'}">print</button>
+  </div>
+  

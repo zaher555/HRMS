@@ -1,0 +1,63 @@
+<div class="container mt-2 text-light">
+  <div class="logo">
+    <img src="logo.png" class="img-fluid rounded-start">
+  </div>
+    <div class="row pt-5 me-5 w-100">
+      <p class="fs-2 mb-5 text-center title"  [style.color]="'#4883a3'" >Admin Board</p>
+    </div>
+    <div class="row pt-2 w-100">
+            <div class="col-md-3 mb-3">
+                <mat-card class="p-3 d-flex align-items-center justify-content-center" [style.background-color]="'#225470'">
+                    <mat-card-header>
+                        <fa-icon [icon]="userGroupIcon"></fa-icon>
+                    </mat-card-header>
+                    <mat-card-content class="text-center">
+                        <p class=" title-cart pb-4">Employees</p>
+                        <p class="fs-2">{{counts.totalemployees}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+          <div class="col-md-3 mb-3">
+            <mat-card class="p-3 card2 d-flex align-items-center justify-content-center" >
+              <mat-card-header>
+                <fa-icon [icon]="doorOpenIcon"></fa-icon>
+              </mat-card-header>
+              <mat-card-content class="text-center ">
+                <p class="fs-7 title-cart pb-4">Visits</p>
+                <p class="fs-2">{{counts.totalusers}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+
+          <div class="col-md-3 mb-3">
+            <mat-card class="p-3 d-flex align-items-center justify-content-center" [style.background-color]="'#FFCC6F'">
+              <mat-card-header>
+                <fa-icon [icon]="usersLineIcon"></fa-icon>
+              </mat-card-header>
+              <mat-card-content class="text-center">
+                <p class="fs-7 title-cart pb-4">Groups</p>
+                <p class="fs-2">{{counts.totalgroups}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <mat-card class="p-3 card4 d-flex align-items-center justify-content-center">
+              <mat-card-header class="">
+                <fa-icon [icon]="fileInvoice"></fa-icon>
+              </mat-card-header>
+              <mat-card-content class="text-center">
+                <p class="fs-7 title-cart pb-4">Reports</p>
+                <p class="fs-2">{{counts.totalreports}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+    </div>
+    <div class="row p-5 w-100 d-flex justify-content-center align-items-center lh-base">
+       <div class="col-md-8 text-dark fw-bold content-head">Enjoy Your system Management Dashboard</div>
+       <div class="col-md-4 mt-5"> <img src="./assets/images/onboarding.png"></div>
+    </div>
+</div>

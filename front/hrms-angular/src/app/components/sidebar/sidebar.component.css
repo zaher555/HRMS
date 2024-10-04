@@ -1,0 +1,42 @@
+
+mat-nav-list{
+
+    background-color: #4883a3;
+    height: 100%;
+}
+.mat-list-item{
+
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.icon{
+    color: white;
+}
+:host *{
+    transition: all 500ms ease-in-out;
+}
+span{
+    
+    font-size: 16px;
+    margin-left: 5px;
+    font-weight: 500;
+    width: 100%;
+    color:white;
+}
+.hide-title{
+    opacity:0 ;
+}
+.active-link .mat-icon {
+    color: #225470; 
+  }
+  .logo{
+    background-color: #4883a3;
+    color: #fff;
+
+}
+.logo img{
+    border: none;
+      border-radius: 50px;
+    background-color: #FFF;
+  }

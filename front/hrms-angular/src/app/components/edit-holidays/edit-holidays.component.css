@@ -1,0 +1,47 @@
+body {
+    background-color: #EBEBEB;
+}
+
+img {
+    width: 10%;
+}
+
+.title {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+button {
+    height: 37px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a6f8b;
+    color: white;
+    font-size: 16px;
+    margin: 30px auto; 
+    cursor: pointer;
+    text-align: center;
+}
+
+#thead {
+    background-color: #2a6f8b !important;
+}
+
+.form-container {
+
+    background-color: #fff;
+    margin-top: 50px;
+    width: 600px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 10px 10px 10px gainsboro;
+    border: 1px solid rgb(206, 206, 206) !important;
+    padding: 20px;
+}
+mat-label{
+    color: #2a6f8b;
+    font-weight: 600;
+}

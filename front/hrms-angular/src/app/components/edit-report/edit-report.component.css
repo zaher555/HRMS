@@ -1,0 +1,91 @@
+body
+{
+  background-color: #EBEBEB;
+}
+.logo
+{
+  width: 20%;
+}
+.title
+{
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+.text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.75s step-end infinite;
+}
+form
+{
+  width: 36%;
+}
+.month,.year,.submit
+{
+  width: 34%;
+}
+.stroke
+{
+  border: 2px solid #296889;
+  font-size: 13px;
+}
+.show
+{
+  background-color: #296889;
+  color: white;
+  font-size: 15px;
+}
+.search div
+{
+  border: 2px solid #296889;
+  border-radius: 10px;
+}
+.search div span
+{
+  background-color: #296889;
+  color: white;
+  cursor: pointer;
+}
+thead th
+{
+  background-color: #296889;
+  color: white;
+  text-align: center;
+}
+i
+{
+  /* font-size: 30px; */
+  cursor: pointer;
+}
+td
+{
+  text-align: center;
+}
+.print
+{
+  font-size: 30px;
+}
+
+form
+{
+  box-shadow: 10px 10px 10px gainsboro;
+  border: 2px solid #0B5E84 !important;
+  background-color: #0B5E84;
+  flex-wrap: wrap;
+}
+button
+{
+  border:1px solid #979696;
+}
+button:hover
+{
+  border:1px solid #369bd2;
+}
+

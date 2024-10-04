@@ -1,0 +1,31 @@
+
+
+  <div class=" ms-5 col-md-11 main-data pt-3">
+     <div class="logo">
+       <img src="logo.png" class="img-fluid rounded-start">
+     </div>
+<div class="text-center">
+  <p [ngStyle]="{'display':'inline-block','color':'#28688B'}" class="fs-4 fw-bold"><i class="fa-solid fa-gears d-block pb-2 icon fs-2"></i>General Settings</p>
+</div>
+<div class="d-flex justify-content-end"><button type="button" class="btn" [routerLink]="['/edit-weekend']" routerLinkActive="router-link-active" >Update weekEnds</button>
+</div>
+
+  <div class="form-container text-center w-50" [formGroup]="editForm" (ngSubmit)="update(add_ons,discount)">
+  
+    
+      <div class="form-group m-2">
+        <mat-label  for="add_ons">Add-ons</mat-label>
+        <input  type="text" id="add_ons" formControlName="add_ons" name="add_ons" class="form-control w-75 mx-auto" #add_ons required>
+        
+      </div>
+  
+      <div class="form-group m-2">
+        <mat-label for="discount">Discounts</mat-label>
+        <input  type="text" id="discount" formControlName="discount" name="discount" class="form-control w-75 mx-auto" #discount required>
+      </div>
+  
+      <div class="form-group m-3 mx-auto w-100">
+        <button type="submit" class="btn" (click)="update(add_ons.value,discount.value)">Update</button>
+      </div>
+    </div>
+  </div>

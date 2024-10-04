@@ -1,0 +1,106 @@
+<div class=" card-title d-flex justify-content-between align-items-center pb-3 px-3 mb-5"> 
+  <div class="logo m-0"><img [src]="logoSrc" class="img-fluid rounded-start"></div>
+  <a class="nav-a" [routerLink]="['/employees']" routerLinkActive="''" >
+   <fa-icon [icon]="faLongArrowRight"  [ngStyle]="{'color':'#28688B'}" class=" fs-2 mb-5" ></fa-icon></a>
+</div>  
+<div class=" form-container mx-auto" (ngSubmit)="formSubmit()">
+  <form (ngSubmit)="formSubmit()">
+    <h1 class="text-center title fs-2"><i class="fa-solid fa-user d-block pb-2 icon"></i>New Employee</h1>
+    <div class="row m-2">
+      <div class="form-group col-md-6">
+        <mat-label for="name" >Name</mat-label>
+        <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder=".....">
+        <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
+
+      </div>
+      <div class="form-group col-md-6">
+        <mat-label for="ssn" >national ID</mat-label>
+        <input type="text" class="form-control" [(ngModel)]="ssn" name="ssn" placeholder=".....">
+        <span *ngIf="errors.ssn" class="text-danger">{{errors.ssn}}</span>
+
+      </div>
+
+    </div>
+
+    <div class="row m-2">
+      <div class="form-group col-md-6">
+        <mat-label for="phone" >Phone</mat-label>
+        <input type="text" class="form-control" [(ngModel)]="phone" name="phone" id="phone" placeholder=".....">
+        <span *ngIf="errors.phone" class="text-danger">{{errors.phone}}</span>
+
+      </div>
+      <div class="form-group col-md-6">
+        <mat-label for="hire_date" >Contract Date</mat-label>
+        <input type="date" class="form-control" [(ngModel)]="hire_date" name="hire_date" placeholder="....">
+        <span *ngIf="errors.hire_date" class="text-danger">{{errors.hire_date}}</span>
+
+      </div>
+    </div>
+    <div class="row m-2">
+      <div class="form-group col-md-6">
+        <mat-label for="gender" >Gender</mat-label>
+        <select type="text" class="form-control" [(ngModel)]="gender" name="gender">
+          <option value="">select gender....</option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+        <span *ngIf="errors.gender" class="text-danger">{{errors.gender}}</span>
+
+      </div>
+      <div class="form-group col-md-6">
+        <mat-label for="department_id" >department</mat-label>
+        <select type="text" class="form-control" [(ngModel)]="department_id" id="department_id" name="departmentId"
+          required>
+          <option *ngFor="let department of departments" [value]="department.id">{{department.department_name}}</option>
+        </select>
+        <span *ngIf="errors.department_id" class="text-danger">{{errors.department_id}}</span>
+      </div>
+
+    </div>
+    <div class="row m-2">
+      <div class="form-group col-md-12">
+        <mat-label for="address" >address</mat-label>
+        <textarea class="form-control w-100" [(ngModel)]="address" name="address" placeholder="....."></textarea>
+        <span *ngIf="errors.address" class="text-danger">{{errors.address}}</span>
+
+      </div>
+
+    </div>
+
+    <div class="row m-2">
+      <div class="form-group col-md-6">
+        <mat-label for="salary" >Salary</mat-label>
+        <input type="text" class="form-control" [(ngModel)]="salary" name="salary" placeholder=".....">
+        <span *ngIf="errors.salary" class="text-danger">{{errors.salary}}</span>
+
+      </div>
+      <div class="form-group col-md-6">
+        <mat-label for="doa" >start Date</mat-label>
+        <input type="date" class="form-control" [(ngModel)]="doa" name="doa" placeholder="....">
+        <span *ngIf="errors.doa" class="text-danger">{{errors.doa}}</span>
+      </div>
+
+    </div>
+
+    <div class="row m-2">
+    <div class="form-group col-md-6">
+      <mat-label for="nationality" >arrival time</mat-label>
+      <input type="time" class="form-control" [(ngModel)]="check_in" name="check_in"  id="check_in" placeholder="....">
+      <span *ngIf="errors.check_in" class="text-danger">{{errors.check_in}}</span>
+
+    </div>
+    <div class="form-group col-md-6">
+      <mat-label for="birthdate" >leave time</mat-label>
+      <input type="time" class="form-control" [(ngModel)]="check_out" name="check_out" id="check_out" placeholder=".....">
+      <span *ngIf="errors.check_in" class="text-danger">{{errors.check_out}}</span>
+
+     
+
+    </div>
+  </div>
+
+
+    <div class="mx-auto w-25" ><button type="submit" class="mx-5 w-50 btn">save</button></div>
+
+  </form>
+</div>

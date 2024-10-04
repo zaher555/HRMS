@@ -1,0 +1,55 @@
+<div class="row w-100 h-100">
+  <div class="col-md-1">
+      <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-11 main-data pt-3">
+      <div class="logo">
+        <img src="logo.png" class="img-fluid rounded-start">
+      </div>
+      <div class="title text-center pb-5">
+        {{displayedText}}
+      </div>
+        <div class="mt-2 pb-5">
+          <form action="" method="" class="w-100 rounded p-5 d-flex">
+            <div class="w-100 ps-5 pb-5">
+              <p class="text-white">Employee Name: </p>
+              <p class="text-white">Department: </p>
+            </div>
+
+            <div class="mb-3 w-25 ms-5">
+              <label for="basicSalary" class="form-label text-white mb-0">Basic Salary</label>
+              <input type="number" class="form-control" id="basicSalary">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="totalAttedanceDays" class="form-label text-white mb-0">Total Attedance Days</label>
+              <input type="number" class="form-control" id="totalAttedanceDays">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="totalDepartureDays" class="form-label text-white mb-0">Total Departure Days</label>
+              <input type="number" class="form-control" id="totalDepartureDays">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="additionalHours" class="form-label text-white mb-0">Additional Hours</label>
+              <input type="number" class="form-control" id="additionalHours">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="discountPerHour" class="form-label text-white mb-0">Discount Per Hour</label>
+              <input type="number" class="form-control" id="discountPerHour">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="totalAddition" class="form-label text-white mb-0">Total Addition</label>
+              <input type="number" class="form-control" id="totalAddition">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="totalDiscount" class="form-label text-white mb-0">Total Discount</label>
+              <input type="number" class="form-control" id="totalDiscount">
+            </div>
+            <div class="mb-3 w-25 ms-5">
+              <label for="netSalary" class="form-label text-white mb-0">Net Salary</label>
+              <input type="number" class="form-control" id="netSalary">
+            </div>
+            <button type="submit" class="btn w-50 m-auto d-block text-white mt-5">Update</button>
+          </form>
+        </div>
+      </div>
+</div>

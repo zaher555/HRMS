@@ -1,0 +1,28 @@
+<div class="container h-100 d-flex align-items-center">
+  <div class="card mb-3 w-100">
+    <div class="row g-0">
+      <div class="col-md-6 d-flex justify-content-center align-items-center left-side">
+        <div class="logo d-flex justify-content-center align-items-center w-50">
+          <img src="logo.png" class="img-fluid rounded-start">
+        </div>
+       
+      </div>
+      <div class="col-md-6">
+        <div class="card-body pt-5 pb-5">
+          <form class="ps-4 pe-4" (ngSubmit)="onSubmit()">
+            <div class="mb-3 pt-5 pb-3 form-group">
+              <label class=" mb-0 form-label"for="email">Email:</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="email"  placeholder="Please Enter Your User Name" name="email" required>
+            </div>
+            <div class="mb-3 pb-3">
+              <label for="password" class=" mb-0 form-label">Password:</label>
+              <input type="password" class="form-control" placeholder="Please Enter Your Password" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+            <button type="submit" class="btn w-50 m-auto d-block text-white">Login</button>
+          </form>
+          <div *ngIf="errorMessage" class="error-message  m-auto">{{ errorMessage }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+.container{
+
+    height: 70vh;
+}
+
+
+
+img {
+  width: 400px;
+  height: 100%;
+
+}
+.logo{
+  width: 10%;
+}
+mat-card {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card2,.card4{
+  width: 100%;
+  margin-left: auto;
+  color: white;
+  background-color: #4883a3;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+.fs-2 {
+  font-size: 1.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+.admin-card{
+    padding-right: 5px;
+}
+h3{
+
+    font-size:12px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Open Sans',sans-serif;
+}
+mat-icon, fa-icon{
+    font-size: 42px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    color: white;
+    height: 50px;
+    width: 55px;
+}
+
+.label-card{
+
+    padding: 5px 8px 0 8px;
+    font-size:18px ;}
+
+
+/* table css */
+table {
+  width: 100%;
+  }
+
+  .table-row{
+    margin-top: 150px;
+  }
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.title-cart
+{
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.content-head
+{
+  text-shadow: 0px 5px 0px gray;
+  font-size: 4rem;
+  color: gainsboro !important;
+}

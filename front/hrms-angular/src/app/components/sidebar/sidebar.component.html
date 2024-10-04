@@ -1,0 +1,17 @@
+<!-- <div class="sidenav-header">
+  <div class="logo mt-1"><img height="100" width="100" [src]="logoSrc" alt="logo"></div>
+</div> -->
+<mat-nav-list>
+  <a class="mat-list-item"
+  mat-list-item
+  *ngFor="let menuItem of menuItems(); let i =index" 
+  [routerLink]="menuItem.route"
+  routerLinkActive="active-link"> 
+    <mat-icon class="icon" matListItemIcon [style.color]="'#FFF'" matTooltip="{{menuItem.label}}"
+    (click)="toggleIsExpanded(i)">{{menuItem.icon}}</mat-icon>
+    <span [class.hide-title]="sideNavCollaps()">{{menuItem.label}}</span>
+  </a>
+
+ 
+</mat-nav-list>
+

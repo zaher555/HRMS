@@ -1,0 +1,47 @@
+<div class="ms-5">
+  <div class="col-md-11 main-data pt-3">
+  <div class="logo">
+    <img src="logo.png" class="img-fluid rounded-start">
+  </div>
+  <form [formGroup]="groupPriviliages" (ngSubmit)="sendData()" class="mt-5">
+    <div class="w-50 m-auto">
+      <label for="groupName" class="form-label">Group Name:</label>
+      <input id="groupName" formControlName="groupName" class="form-control stroke" placeholder="Enter Group Name"/>
+      <div *ngIf="groupName?.invalid && groupName?.touched">
+        <small *ngIf="groupName?.errors?.['required']" class="text-danger">* Group name is required.</small>
+        <small *ngIf="groupName?.errors?.['minlength']" class="text-danger">* Group name must be at least 2 characters long.</small>
+      </div>
+    </div>
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th class="text-light">Select All</th>
+          <th class="text-light">Page</th>
+          <th class="text-light">Add</th>
+          <th class="text-light">Remove</th>
+          <th class="text-light">Update</th>
+          <th class="text-light">Show</th>
+        </tr>
+      </thead>
+      <tbody formArrayName="permissions">
+        <tr *ngFor="let permission of permissions.controls; let i = index" [formGroupName]="i">
+          <td>
+            <input type="checkbox" (change)="toggleSelectAll($event, i)" />
+          </td>
+          <td>
+            {{ permission.get('page')?.value }}
+          </td>
+          @for (permission of allPermissions; track $index) {
+          <td><input type="checkbox" formControlName="{{permission.name}}" [value]="permission.id"/></td>
+          }
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="submit w-25 mx-auto">
+      <button type="submit" class="btn show w-50" [disabled]="groupPriviliages.invalid">Submit</button>
+    </div>
+
+</form>
+</div>
+</div>

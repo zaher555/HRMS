@@ -1,0 +1,87 @@
+body
+{
+  background-color: #EBEBEB;
+
+}
+.logo
+{
+  width: 10%;
+}
+.title
+{
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #296889;
+}
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+.text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.75s step-end infinite;
+}
+form
+{
+  width: 36%;
+}
+.month, .year, .submit
+{
+  width: 34%;
+}
+.stroke
+{
+  border: 2px solid #296889;
+  font-size: 13px;
+}
+.show
+{
+  background-color: #296889;
+  color: white;
+  font-size: 15px;
+}
+.search input
+{
+  border: 2px solid #296889;
+  border-right: none;
+  border-radius: 10px;
+}
+.search span
+{
+  background-color: #296889;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #296889;
+}
+thead th
+{
+  background-color: #296889;
+  color: white;
+}
+.filter{
+
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5f7a82;
+  color: white;
+  font-size: 16px;
+  /* margin: 30px; */
+  cursor: pointer;
+  text-align: center;
+}
+.filter:hover {
+  background-color: #48616d;
+}
+i
+{
+  cursor: pointer;
+  color: #fff;
+  background-color: #296889;
+  padding: 5px;
+
+}

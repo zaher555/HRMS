@@ -1,0 +1,80 @@
+<div class="col-8 mx-auto">
+    <div class="card" [ngStyle]="{'background-color':'transparent','border':'none'}">
+      <div class="card-title d-flex justify-content-between align-items-center"[ngStyle]="{'display':'inline-block','margin-bottom':'20px'}" >
+          <p [ngStyle]="{'display':'inline-block','color':'#28688B'}" class="fs-3 m-0">View Employee</p>
+            <a class="nav-a" [routerLink]="['/employees']" routerLinkActive="''" >
+              <fa-icon [icon]="faLongArrowRight" [ngStyle]="{'color':'#28688B'}" class=" fs-2 mb-5" ></fa-icon></a>
+        </div>
+        <div class="container ms-2 my-5  p-5 rounded"[formGroup]="employeeForm">
+           
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <mat-label for="name" >Employee name</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('name')?.value }}</p>
+          
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label for="ssn" >national ID</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('ssn')?.value }}</p>
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label for="phone" >Phone</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('phone')?.value }}</p>
+          
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label for="hire_date" >Contract Date</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('hire_date')?.value }}</p>
+          
+                </div>
+          
+              </div>
+          
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <mat-label>Gender</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('gender')?.value }}</p>
+
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label>department</mat-label>
+                  <p class="form-control" >{{ departmentName }}</p> 
+
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label >address</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('address')?.value }}</p>
+          
+                </div>
+                
+              </div>
+              
+              <div class="row ">
+              <div class="form-group col-md-3">
+                  <mat-label>arrival time</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('check_in')?.value }}</p>
+
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label  >leave time</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('check_out')?.value }}</p>
+                </div>
+          
+              </div>    
+
+              <div class="row ">
+              <div class="form-group col-md-3">
+                  <mat-label>Salary</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('salary')?.value }}</p>
+
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-label  >start Date</mat-label>
+                  <p class="form-control" >{{ employeeForm.get('doa')?.value }}</p>
+                </div>
+          
+              </div>    
+           
+        </div>
+    </div>
+</div>

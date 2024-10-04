@@ -1,0 +1,15 @@
+.print{
+    border: 1px solid #FFF;
+    font-size: 18px;
+    width: 85px;
+    height: 40px; 
+  background-color:transparent;
+    border-radius: 10px;
+    border-color: #28688B;
+    transition: all 0.2s ease-in-out;
+}
+.print:hover{
+ 
+        border: none;
+
+}

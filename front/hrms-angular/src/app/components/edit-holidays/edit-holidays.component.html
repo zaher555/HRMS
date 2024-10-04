@@ -1,0 +1,24 @@
+<div class="m-auto">
+    <div class="logo ms-5">
+        <img src="logo.png" class="img-fluid rounded-start">
+      </div>
+<div class="mt-3 mx-5 card-title d-flex justify-content-between align-items-center"[ngStyle]="{'margin-bottom':'20px'}" ><p [ngStyle]="{'display':'inline-block','color':'#28688B'}" class="fs-3 m-0">Edit Holiday</p><a class="nav-a" [routerLink]="['/addholiday']" routerLinkActive="''" >
+    <fa-icon [icon]="faLongArrowRight" class=" fs-2 mb-5" [ngStyle]="{'color':'#28688B'}" ></fa-icon></a>
+</div>
+    <div class="form-container mx-auto rounded">
+        <form [formGroup]="editForm" (ngSubmit)="EditHoliday(holidayId)" class="w-50 my-5 d-flex flex-column">
+            <div class="col-md-12 mb-2 w-100">
+                <mat-label for="name" class="">Name</mat-label>
+                <input type="text" class="form-control" formControlName="name"  id="name" name="name"  required>
+            </div>
+            <div class="col-md-12 mb-2 w-100">
+                <mat-label for="Date" class="">Date</mat-label>
+                <input type="date" class="form-control" formControlName="holiday_date"  name="holiday_date" id="hire_date"  required>
+            </div>
+
+            <button type="submit" class="btn w-50 mx-auto mt-3">Update</button>
+        </form>
+    </div>
+</div>
+
+    

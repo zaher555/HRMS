@@ -1,0 +1,61 @@
+
+<div class="col-8 w-100">
+  <div class="card" >
+  <div class="card-title d-flex justify-content-between align-items-center pb-3 px-3">
+    <div class="logo m-0"><img [src]="logoSrc" class="img-fluid rounded-start"></div>
+    <a class="nav-a" [routerLink]="['/admins']" routerLinkActive="''" >
+     <fa-icon [icon]="faLongArrowRight"  [ngStyle]="{'color':'#28688B'}" class=" fs-2 mb-5" ></fa-icon></a>
+  </div>
+  <div class=" form-container mx-auto">
+          <form (ngSubmit)="formsubmit()" >
+            <h1 class="text-center title fs-2"><i class="fa-solid fa-user-tie d-block pb-2 icon"></i>New Admin</h1>
+            <div class="row m-5 my-5">
+                  <div class="form-group col-md-6">
+                <mat-label for="fullname">Full Name</mat-label>
+                <input type="text" class="form-control" [(ngModel)]="fullname" name="fullname"  placeholder="full name ...">
+                <span *ngIf="errors.fullname" class="text-danger">{{errors.fullname}}</span>
+              </div>
+             <div class="form-group col-md-6">
+
+                 <mat-label for="group_id" >Group</mat-label>
+                  <select type="text" class="px-3 pt-2 form-control" [(ngModel)]="group_id" name="group_id" [ngStyle]="{
+                    'background-color':'white',
+                    'height':'40px',
+                    'border-radius':'5px',}" >
+
+                      <option *ngFor="let group of groups" [value]="group.id">{{group.name}}</option>
+
+                </select>
+                <span *ngIf="errors.group_id" class="text-danger">{{errors.group_id}}</span>
+
+          </div> </div>
+              <div class="row m-5 my-5">
+                  <div class="form-group col-md-6">
+                <mat-label for="username" >user Name</mat-label>
+                <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="user name ...">
+                <span *ngIf="errors.username" class="text-danger">{{errors.username}}</span>
+              </div>
+              <div class="form-group col-md-6">
+                <mat-label for="email" >Email</mat-label>
+                <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="email ....">
+                <span *ngIf="errors.email" class="text-danger">{{errors.email}}</span>
+              </div>
+
+
+              </div>
+
+          <div class="row m-5 my-5">
+            <div class="form-group col-md-12">
+              <mat-label for="password">Password</mat-label>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password...">
+              <span *ngIf="errors.password" class="text-danger">{{errors.password}}</span>
+            </div>
+          </div>
+            <div class="row d-flex justify-content-center">
+              <button type="submit" class=" btn">save</button>
+            </div>
+          </form>
+      </div>
+
+</div></div>
+

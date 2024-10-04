@@ -1,0 +1,63 @@
+<div class="row w-100 h-100">
+  <div class="col-md-11 main-data pt-3">
+    <div class="card-title d-flex justify-content-between align-items-center">
+      <div class="logo m-0"><img src="logo.png" class="img-fluid rounded-start">
+      </div> <a class="nav-a"[routerLink]="['/attendance-departure']" routerLinkActive="''">
+        <fa-icon [icon]="faLongArrowRight" [ngStyle]="{'color':'#28688B'}" class=" fs-2 mb-5" ></fa-icon></a>
+    </div>
+      <div class="title text-center pb-5 fw-bold" [ngStyle]="{'color': '#296889'}">
+        View attendance
+      </div>
+      <div class="card mt-5 pb-5" [ngStyle]="{'background-color':'transparent','border':'none'}">
+        <div *ngIf="isLoading; else elseForm">
+          <app-loader :title="loadingTitle"></app-loader>
+        </div>
+        <ng-template #elseForm>
+          <div  class="container ms-5 rounded" [formGroup]="attendnaceForm" >
+            <div class="row">
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="name" class="form-label mb-0">employee Name</mat-label>
+                <p class="form-control">{{attendnaceForm.get('name')?.value}}</p>
+              </div>
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="department" class="form-label mb-0">department Name</mat-label>
+                <p class="form-control">{{attendnaceForm.get('department')?.value}}</p>
+              </div>
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="check_in" class="form-label mb-0">Attedance Time</mat-label>
+                <p class="form-control">{{ attendnaceForm.get('check_in')?.value }}</p>
+              </div>
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="check_out" class="form-label mb-0">Departure Time</mat-label>
+                <p class="form-control">{{ attendnaceForm.get('check_out')?.value }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <!-- <div class="form-group mb-3 col-md-3">
+                <mat-label for="bonus_value" class="form-label mb-0">Bonus Value</mat-label>
+                <p class="form-control" >{{ attendnaceForm.get('bonus_value')?.value }}</p>
+              </div>
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="check_out" class="form-label mb-0">Deduction Value</mat-label>
+                <p class="form-control" >{{ attendnaceForm.get('deduction_value')?.value }}</p>
+              </div> -->
+    
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="date" class="form-label mb-0">Attendance Date</mat-label>
+                <p class="form-control" >{{ attendnaceForm.get('date')?.value }}</p>
+              </div>
+              <div class="form-group mb-3 col-md-3">
+                <mat-label for="status" class="form-label mb-0">Status</mat-label>
+                <p class="form-control" >{{ attendnaceForm.get('status')?.value }}</p>
+              </div>
+            </div>
+  
+            
+
+          </div>
+        </ng-template>
+  
+  
+      </div>
+      </div>
+</div>

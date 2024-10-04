@@ -1,0 +1,24 @@
+
+<mat-toolbar class=" mat-toolbar mat-elevation-z3"  *ngIf="!isLogin()">
+  <button mat-icon-button class="menu-btn" (click)="collapsed.set(!collapsed())">
+    <mat-icon class="text-light">menu</mat-icon></button>
+  <span class="ms-auto mat-toolbar-spacer"></span>
+ <div class="me-3">
+  <span class="user me-3"> {{user_name}}</span>
+  <button class="logout-btn" (click)="logout()">Logout</button></div>
+
+
+
+</mat-toolbar>
+
+<mat-sidenav-container class="">
+  <mat-sidenav opened mode="side" [style.width]="sideNavWidth()" *ngIf="!isLogin()">
+    <app-sidebar [collapsed]="collapsed()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content" [style.margin-left]="sideNavWidth()">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+</mat-sidenav-container>
+
+

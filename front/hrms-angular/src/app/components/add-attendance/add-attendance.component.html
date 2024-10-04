@@ -1,0 +1,66 @@
+<div class="row w-100">
+  <div class="col-md-11 main-data pt-3">
+    <div class="card-title d-flex justify-content-between align-items-center">
+      <div class="logo m-0"><img src="logo.png" class="img-fluid rounded-start">
+      </div> <a class="nav-a"[routerLink]="['/attendance-departure']" routerLinkActive="''">
+        <fa-icon [icon]="faArrowRotateForward" class=" fs-2 mb-5" ></fa-icon></a>
+    </div>
+
+    <div class="title text-center pb-3 mt-5 fw-bold">
+      Add Attendance
+    </div>
+    <div class="card mt-5 pb-5" [ngStyle]="{'background-color':'transparent','border':'none'}">
+      <div *ngIf="isLoading; else elseForm">
+        <app-loader :title="loadingTitle"></app-loader>
+      </div>
+      <ng-template #elseForm>
+        <form action="" method="" class="m-auto rounded p-5" (ngSubmit)="submitAttendance()">
+          <div class="mb-3">
+            <label for="employee_id" class="form-label text-white mb-0">Employee Name</label>
+            <select class="form-control" [(ngModel)]="selectedEmployeeId" name="employee_id" required>
+              <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
+            </select>
+            <span *ngIf="errors.employee_id" class="text-danger">{{errors.employee_id}}</span>
+          </div>
+
+          <div class="mb-3">
+            <label for="check_in" class="form-label text-white mb-0">Attedance Time</label>
+            <input type="time" class="form-control" [(ngModel)]="check_in" id="check_in" name="check_in"
+              required>
+            <span *ngIf="errors.check_in" class="text-danger">{{errors.check_in}}</span>
+
+          </div>
+          <div class="mb-3">
+            <label for="check_out" class="form-label text-white mb-0">Departure Time</label>
+            <input type="time" class="form-control" [(ngModel)]="check_out" id="check_out" name="check_out" required>
+              <span *ngIf="errors.check_out" class="text-danger">{{errors.check_out}}</span>
+          </div>
+
+          <div class="mb-3">
+            <label for="date" class="form-label text-white mb-0">Attendance Date</label>
+            <input type="date" class="form-control" [(ngModel)]="date" id="date"
+              name="date" required>
+            <span *ngIf="errors.date" class="text-danger">{{errors.date}}</span>
+          </div>
+          <!-- <div class="mb-3">
+            <label for="bonus_value" class="form-label text-white mb-0">bonus value</label>
+            <input type="text" class="form-control" [(ngModel)]="bonus_value" id="check_out" name="bonus_value" required>
+              <span *ngIf="errors.bonus_value" class="text-danger">{{errors.bonus_value}}</span>
+          </div>
+
+          <div class="mb-3">
+            <label for="deduction_value" class="form-label text-white mb-0">deduction value</label>
+            <input type="text" class="form-control" [(ngModel)]="deduction_value" id="deduction_value"
+              name="deduction_value" required>
+            <span *ngIf="errors.deduction_value" class="text-danger">{{errors.deduction_value}}</span>
+          </div> -->
+          
+          
+          <button type="submit" class="btn w-50 m-auto d-block text-white">Add</button>
+        </form>
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>

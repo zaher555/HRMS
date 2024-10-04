@@ -1,0 +1,24 @@
+.card
+{
+  overflow: hidden;
+  border-top-left-radius:0 ;
+  border-bottom-left-radius:0 ;
+  border: none;
+}
+.left-side
+{
+  background-color: #EBEBEB;
+}
+.card-body
+{
+  background-color: #296889;
+  color: white;
+}
+button
+{
+  border:1px solid #979696;
+}
+button:hover
+{
+  border:1px solid #369bd2;
+}
